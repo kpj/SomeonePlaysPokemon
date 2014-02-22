@@ -88,8 +88,10 @@ http.createServer(function (req, res) {
 			res.writeHead(200, {'Content-Type': getMIMEType(path)});
 			res.end(fs.readFileSync('./base' + path));
 		} catch(err) {
+			console.log(err);
+			
 			res.writeHead(404, {'Content-Type': 'text/plain'});
 			res.end('Sorry :-/');
 		}
 	}
-}).listen(4242);
+}).listen(8080);

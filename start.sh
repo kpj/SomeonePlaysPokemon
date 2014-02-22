@@ -6,15 +6,13 @@ set -u
 function shutdown {
 	echo "Shutting down..."
 
-	if $(kill -s 0 $python_pid &>/dev/null) ; then
-		kill $python_pid
-	fi
-	if $(kill -s 0 $node_pid &>/dev/null) ; then
-		kill $node_pid
-	fi
-	if $(kill -s 0 $vbam_pid &>/dev/null) ; then
-		kill -9 $vbam_pid # :-(
-	fi
+	set +e
+	kill $python_pid
+	kill $node_pid
+	kill -9 $vbam_pid # :-(
+	set -e
+
+	exit
 }
 trap shutdown 2
 

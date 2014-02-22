@@ -10,10 +10,10 @@ vbam_pid=$!
 echo "Please press enter when ready to select a window"
 read
 
-node frontend/main.js >/dev/null &
+node backend/nodejs/main.js >/dev/null &
 node_pid=$!
 
-python3 backend/glue.py >/dev/null &
+python3 backend/python/glue.py >/dev/null &
 python_pid=$!
 
 echo "Press enter to end this application"

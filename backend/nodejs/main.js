@@ -86,7 +86,7 @@ http.createServer(function (req, res) {
 
 		try {
 			res.writeHead(200, {'Content-Type': getMIMEType(path)});
-			res.end(fs.readFileSync('./frontend/base' + path));
+			res.end(fs.readFileSync('./frontend/' + path));
 		} catch(err) {
 			console.log(err);
 

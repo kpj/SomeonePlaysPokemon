@@ -20,8 +20,6 @@ def send_key_to_window(key, window):
 	"""Writes given key to specified window
 	"""
 
-	#cmd = ['xdotool', 'key', '--clearmodifiers', '--window', window, key]
-
 	# hacky because simply approach does not work...
 	stdout, stderr = subprocess.Popen(
 		[

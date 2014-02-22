@@ -19,13 +19,7 @@ class ChannelWrapper(object):
 		# log into chat
 		server = client.server().connect(self.config['server'], self.config['port'], self.config['username'])
 
-		# add generic printing for everything
-		f = lambda conn, event: 42#print(event.source, ' '.join(event.arguments))
-		for val in irc.events.numeric.values():
-			server.add_global_handler(val, f)
-
 		# process chat messages
-		server.remove_global_handler('pubmsg', f)
 		server.add_global_handler('pubmsg', self.parse_input)
 
 		# log into chat room

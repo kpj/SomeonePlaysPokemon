@@ -10,7 +10,7 @@ vbam_pid=$!
 echo "Please press enter when ready to select a window"
 read # wait for user to select window
 
-node frontend/main.js &
+node frontend/main.js >/dev/null &
 node_pid=$!
 
 python3 backend/glue.py >/dev/null &

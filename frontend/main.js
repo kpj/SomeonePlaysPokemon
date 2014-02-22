@@ -86,10 +86,10 @@ http.createServer(function (req, res) {
 
 		try {
 			res.writeHead(200, {'Content-Type': getMIMEType(path)});
-			res.end(fs.readFileSync('./base' + path));
+			res.end(fs.readFileSync('./frontend/base' + path));
 		} catch(err) {
 			console.log(err);
-			
+
 			res.writeHead(404, {'Content-Type': 'text/plain'});
 			res.end('Sorry :-/');
 		}

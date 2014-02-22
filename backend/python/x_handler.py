@@ -48,7 +48,3 @@ def send_key_to_window(key, window):
 		stdout = subprocess.PIPE, 
 		stderr = subprocess.PIPE
 	).communicate()
-
-if __name__ == "__main__":
-	i = get_window_id()
-	send_key_to_window('d', i)

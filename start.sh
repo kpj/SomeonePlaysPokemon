@@ -8,7 +8,7 @@ cd "$(dirname "$0")" # cwd will be directory of current script
 vbam emerald.gba &>/dev/null &
 vbam_pid=$!
 echo "Please press enter when ready to select a window"
-read # wait for user to select window
+read
 
 node frontend/main.js >/dev/null &
 node_pid=$!

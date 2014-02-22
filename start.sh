@@ -7,7 +7,7 @@ cd "$(dirname "$0")" # cwd will be directory of current script
 
 vbam emerald.gba &>/dev/null &
 vbam_pid=$!
-echo "Please press enter when ready to select a window"
+echo "Please press enter when ready to select window"
 read
 
 node backend/nodejs/main.js >/dev/null &

@@ -1,0 +1,3 @@
+*.json
+*.gba
+__pycache__

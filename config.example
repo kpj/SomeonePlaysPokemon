@@ -1,0 +1,7 @@
+{
+	"server": "irc server",
+	"port": 6667,
+	"username": "irc username",
+	"channel": "channel name",
+	"key_mapping": {"chat_message": "transmitted_key"}
+}

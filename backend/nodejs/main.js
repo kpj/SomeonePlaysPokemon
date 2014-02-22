@@ -2,6 +2,8 @@ var http = require('http')
 	child_process = require('child_process'),
 	fs = require('fs');
 
+var config = require('./../../config.json')['stream'];
+
 
 // helper functions
 function getMIMEType(path) {
@@ -94,4 +96,4 @@ http.createServer(function (req, res) {
 			res.end('Sorry :-/');
 		}
 	}
-}).listen(8080);
+}).listen(config['port']);

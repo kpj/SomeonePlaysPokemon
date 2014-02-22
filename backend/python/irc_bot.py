@@ -17,7 +17,6 @@ class ChannelWrapper(object):
 		client = irc.client.IRC()
 
 		# log into chat
-#		server = client.server().connect(self.config['server'], self.config['port'], self.config['username'], self.config['oauth_password'])
 		server = client.server().connect(self.config['server'], self.config['port'], self.config['username'])
 
 		# add generic printing for everything
@@ -74,13 +73,3 @@ class ChannelWrapper(object):
 
 		if inp:
 			self.callback(inp)
-
-
-if __name__ == "__main__":
-	import json
-
-
-	config = json.load(open('config.json', 'r'))
-
-	chan = ChannelWrapper(config, print)
-	chan.start()

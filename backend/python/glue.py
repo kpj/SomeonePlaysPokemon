@@ -17,5 +17,5 @@ def glue(msg):
 	x_handler.send_key_to_window(config['key_mapping'][msg], win_id)
 
 # start channel analyser
-chan = ChannelWrapper(config, glue)
+chan = ChannelWrapper(config['irc'], glue)
 chan.start()

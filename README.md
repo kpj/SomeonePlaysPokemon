@@ -4,3 +4,8 @@ This is a clone of the famous [twitchplayspokemon](http://www.twitch.tv/twitchpl
 
 ## Goal
 It's my aim to avoid the lag which is introduced by twitch using an efficient javascript/nodejs interaction.
+
+## External Dependencies
+* xwininfo
+* xdotool
+* vbam

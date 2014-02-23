@@ -65,6 +65,9 @@ function handle_process(res) {
 				]
 			);
 
+			// disable client-side caching
+			res.setHeader('Cache-Control', 'no-cache');
+
 			console.log("Redirected pipe...");
 			ffmpeg.stdout.pipe(res);
 		}

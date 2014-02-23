@@ -1,33 +1,18 @@
 import subprocess, time
 
 
-"""Requires xdotool, xwininfo
-"""
-
-
-def get_window_id():
-	"""Asks user to click on some window
-	   returns window id
-	"""
-
-	p = subprocess.Popen('xwininfo', stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-	stdout, stderr = p.communicate()
-
-	win_id = stdout.decode(encoding='utf-8').split('\n')[5].split(' ')[3]
-	return win_id
-
-def send_key_to_window(key, window):
+def send_key_to_window(key, window_title):
 	"""Writes given key to specified window
 	"""
 
 	# hacky because simply approach does not work...
 	stdout, stderr = subprocess.Popen(
 		[
-			'xdotool', 
+			'xdotool',
+			'search',
+			window_title,
 			'keydown', 
-			'--clearmodifiers', 
-			'--window', 
-			window, 
+			'--clearmodifiers',  
 			key
 		], 
 		stdout = subprocess.PIPE, 
@@ -36,11 +21,11 @@ def send_key_to_window(key, window):
 	time.sleep(0.2)
 	stdout, stderr = subprocess.Popen(
 		[
-			'xdotool', 
+			'xdotool',
+			'search',
+			window_title,
 			'keyup', 
-			'--clearmodifiers', 
-			'--window', 
-			window, 
+			'--clearmodifiers',  
 			key
 		], 
 		stdout = subprocess.PIPE, 

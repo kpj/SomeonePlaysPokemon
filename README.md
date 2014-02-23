@@ -9,3 +9,6 @@ It's my aim to avoid the lag which is introduced by twitch using an efficient ja
 * xwininfo
 * xdotool
 * vbam
+* ffmpeg
+* node
+* python3
